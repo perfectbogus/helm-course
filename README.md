@@ -13,6 +13,19 @@ helm get manifest full-coral
 
 helm install --debug --dry-run demo2 ./mychart
 
+# use the Values.favoriteDrink
+helm install demo3 ./mychart --dry-run --debug
+
+helm install demo ./mychart --dry-run --debug --set favoriteDrink=slurm
+
+# Delete a default key
+helm install stable/drupal --set image=my-registry/drupal:0.1.0 --set livenessProbe.exec.command=[cat,docroot/CHANGELOG.txt] --set livenessProbe.httpGet=null
+
+# Template Functions and Pipelines
+# Template Directive {{}}
+
+
+
 ```
 
 Built-in Objects:
