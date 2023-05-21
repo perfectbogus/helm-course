@@ -3,6 +3,14 @@ This project was taken from:
 https://helm.sh/docs/chart_template_guide/getting_started/
 
 ```shell
+# In Ubuntu
+minikube start
+
+# MacOS 
+colima start --kubernetes
+```
+
+```shell
 # Create chart
 helm create mychart
 

@@ -2,3 +2,9 @@ favorite:
   drink: coffee
   food: pizza
   dessert: pie
+
+logical:
+  firstArg: true
+  secondArg: true
+  thirdArg: false
+  fourthArg: false

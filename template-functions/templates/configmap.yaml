@@ -7,3 +7,8 @@ data:
   drink: {{ .Values.favorite.drink }}
   dessert: {{ .Values.favorite.dessert | default "cake" | quote }}
   food: {{ .Values.favorite.food | upper | quote }}
+  full: {{ and .Values.favorite.food .Values.favorite.drink }}
+  logic-and: {{ and .Values.logical.firstArg .Values.logical.secondArg }}
+  logic-and-false: {{ and .Values.logical.firstArg .Values.logical.thirdArg }}
+  logic-or-true: {{ or .Values.logical.firstArg .Values.logical.thirdArg }}
+  logic-or-false: {{ or .Values.logical.thirdArg .Values.logical.fourthArg }}
