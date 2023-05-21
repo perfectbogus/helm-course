@@ -20,3 +20,6 @@ logical:
   stringThree: "string one"
   emptyDefaultArg:
   nonEmptyDefaultArg: "nonempty"
+
+stringFunctions:
+  dog: "Snatcher"

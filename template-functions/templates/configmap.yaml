@@ -26,3 +26,5 @@ data:
   logic-default-when-is-non-empty: {{ default "the default value" .Values.logical.nonEmptyDefaultArg }}
   logic-empty-true: {{ empty .Values.logical.emptyArg }}
   logic-empty-false: {{ empty .Values.logical.nonEmptyArg }}
+  # String Functions
+  string-print: {{ print "Matt has " .Values.stringFunctions.dog " dogs" }}
