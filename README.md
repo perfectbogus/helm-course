@@ -22,9 +22,10 @@ helm install demo ./mychart --dry-run --debug --set favoriteDrink=slurm
 helm install stable/drupal --set image=my-registry/drupal:0.1.0 --set livenessProbe.exec.command=[cat,docroot/CHANGELOG.txt] --set livenessProbe.httpGet=null
 
 # Template Functions and Pipelines
-# Template Directive {{}}
-
-
+# Template Directive {{ quote }} quote function
+helm install functions-demo ./template-functions --dry-run --debug 
+# another functions can be located in 
+#   https://pkg.go.dev/text/template
 
 ```
 
