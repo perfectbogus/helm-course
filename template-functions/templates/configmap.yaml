@@ -7,8 +7,22 @@ data:
   drink: {{ .Values.favorite.drink }}
   dessert: {{ .Values.favorite.dessert | default "cake" | quote }}
   food: {{ .Values.favorite.food | upper | quote }}
-  full: {{ and .Values.favorite.food .Values.favorite.drink }}
+  # you get empty if there is an empty value
+  logic-and-null: {{ and .Values.logical.emptyArg .Values.logical.firstArg }}
+  # you got latest value of the args
+  logic-and-latest: {{ and .Values.favorite.food .Values.favorite.drink }}
   logic-and: {{ and .Values.logical.firstArg .Values.logical.secondArg }}
   logic-and-false: {{ and .Values.logical.firstArg .Values.logical.thirdArg }}
   logic-or-true: {{ or .Values.logical.firstArg .Values.logical.thirdArg }}
   logic-or-false: {{ or .Values.logical.thirdArg .Values.logical.fourthArg }}
+  logic-not-false: {{ not .Values.logical.firstArg }}
+  logic-not-true: {{ not .Values.logical.thirdArg }}
+  logic-eq-number-true: {{ eq .Values.logical.numberOne .Values.logical.numberFour }}
+  logic-eq-number-false: {{ eq .Values.logical.numberOne .Values.logical.numberTwo }}
+  logic-eq-string-true: {{ eq .Values.logical.stringOne .Values.logical.stringThree }}
+  logic-eq-string-false: {{ eq .Values.logical.stringOne .Values.logical.stringTwo }}
+  # you cannot compare numbers with string (even when are numbers)
+  logic-default-when-is-empty: {{ default "the default value" .Values.logical.emptyDefaultArg }}
+  logic-default-when-is-non-empty: {{ default "the default value" .Values.logical.nonEmptyDefaultArg }}
+  logic-empty-true: {{ empty .Values.logical.emptyArg }}
+  logic-empty-false: {{ empty .Values.logical.nonEmptyArg }}

@@ -8,3 +8,15 @@ logical:
   secondArg: true
   thirdArg: false
   fourthArg: false
+  emptyArg:
+  nonEmptyArg: "non empty arg"
+  numberOne: 5
+  numberTwo: 10
+  numberThree: 0
+  numberFour: 5
+  numberFive: "5"
+  stringOne: "string one"
+  stringTwo: "string two"
+  stringThree: "string one"
+  emptyDefaultArg:
+  nonEmptyDefaultArg: "nonempty"
