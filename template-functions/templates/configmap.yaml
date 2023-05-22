@@ -55,4 +55,18 @@ data:
     - {{ . | title | quote}}
     {{- end }}
 
-    
+  # Variable Usage
+  {{- $relname := .Release.Name }}
+  {{- with .Values.favorite }}
+  drink-variable: {{ .drink | quote }}
+  food-variable: {{ .food | lower | quote }}
+  release: {{ $relname }}
+  {{- end}}
+  toppings-variable: |-
+    {{- range $index, $topping := .Values.toppings }}
+    {{ $index }}: {{ $topping }}
+    {{- end}}
+  # for data structure
+  {{- range $key, $val := .Values.favorite }}
+  {{ $key }}-structure: {{ $val | quote }}
+  {{- end }}
