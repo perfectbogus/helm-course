@@ -28,3 +28,31 @@ data:
   logic-empty-false: {{ empty .Values.logical.nonEmptyArg }}
   # String Functions
   string-print: {{ print "Matt has " .Values.stringFunctions.dog " dogs" }}
+  # this prints new line
+  string-println: {{ println "Matt has " .Values.stringFunctions.dog " dogs" }}
+  string-trim: {{ trim .Values.stringFunctions.trimString }}
+  string-trimAll: {{ trimAll "-" .Values.stringFunctions.trimAllSlashes }}
+  string-initials: {{ initials .Values.stringFunctions.initialArg }}
+  number-random-three-digits: {{ randNumeric 3 }}
+  number-random-one-digit: {{ randNumeric 1 }}
+  wrap-text: {{ wrap 8 "sometext" }}
+  {{- if eq .Values.favorite.drink "coffee" }}
+  mug: "true"
+  {{- end }}
+
+  {{- with .Values.favorite }}
+  drink-with: {{ .drink | default "tea" | quote }}
+  food-with: {{ .food | upper | quote }}
+  {{- end }}
+
+  {{- with .Values.favorite }}
+  drink-with-scope: {{ .drink | default "tea" | quote }}
+  food-with-scope: {{ .food | upper | quote }}
+  release: {{ $.Release.Name }}
+  {{- end }}
+  toppings: |-
+    {{- range .Values.toppings }}
+    - {{ . | title | quote}}
+    {{- end }}
+
+    

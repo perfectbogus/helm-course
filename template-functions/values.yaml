@@ -23,3 +23,12 @@ logical:
 
 stringFunctions:
   dog: "Snatcher"
+  trimString: "   hasThreeSpaces   "
+  trimAllSlashes: "---hasThreeSlashes---"
+  initialArg: "Demo Chart"
+
+toppings:
+  - mushrooms
+  - cheese
+  - peppers
+  - onions
